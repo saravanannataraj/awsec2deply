@@ -21,7 +21,7 @@ stages:
       inputs:
         provider: 'aws'
         command: 'init'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/aws'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
         backendServiceAWS: 'awsserviceconnection'
         backendAWSBucketName: 'saravananterraformstate'
         backendAWSKey: 'terraform.tfstate'
@@ -30,5 +30,5 @@ stages:
       inputs:
         provider: 'aws'
         command: 'apply'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/aws'
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
         environmentServiceNameAWS: 'awsserviceconnection'
