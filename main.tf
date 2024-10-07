@@ -7,22 +7,6 @@ provider "aws" {
 
 
 
-# Create the S3 bucket for the Terraform state file
-resource "aws_s3_bucket" "terraform_state" {
-  bucket = "saravananterraformstate"  # Replace with a globally unique bucket name
-  acl    = "private"
-
-  versioning {
-    enabled = true  # Enable versioning to prevent accidental overwrites
-  }
-
-  tags = {
-    Name        = "Terraform State Bucket"
-    Environment = "Production"
-  }
-}
-
-
 # Terraform backend configuration (this part should be placed in your main Terraform configuration)
 terraform {
   backend "s3" {
