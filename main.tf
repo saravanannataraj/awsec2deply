@@ -1,17 +1,10 @@
+
 terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-    backend "s3" {
-        bucket  = "saravananterraformstate"
-        encrypt = true
-        key     = "terraform.tfstate"    
-        region  = "ap-south-1"  
-    }
+  backend "s3" {
+    bucket = "saravananterraformstate"
+    key    = "terraform.tfstate"
+    region = "ap-south-1"
   }
-  required_version = ">= 1.2.0"
 }
 
 provider "aws" {
