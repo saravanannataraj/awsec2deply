@@ -5,8 +5,6 @@ provider "aws" {
 
 
 
-
-
 # Terraform backend configuration (this part should be placed in your main Terraform configuration)
 terraform {
   backend "s3" {
@@ -22,9 +20,18 @@ resource "aws_vpc" "vpc-test" {
 
 
   tags = {
-    Name = "Instance2"
+    Name = "vpc1"
   }
 }
 
+
+resource "aws_vpc" "vpc-test-2" {
+  cidr_block = "10.20.0.0/16"
+
+
+  tags = {
+    Name = "vpc"
+  }
+}
 
 
