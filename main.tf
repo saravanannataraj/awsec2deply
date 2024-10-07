@@ -18,6 +18,6 @@ resource "aws_vpc" "vpc-test" {
 
 
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name = "Instance2"
   }
 }
