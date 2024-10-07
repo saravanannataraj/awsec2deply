@@ -11,10 +11,14 @@ stages:
   - job: deploy_job
     displayName: terraform job
     steps:
+    - script: |
+       echo "Cleaning up existing Terraform installations..."
+       rm -rf /opt/hostedtoolcache/terraform
+      displayName: Clean Terraform Cache
     - task: TerraformInstaller@1
       displayName: terraform install
       inputs:
-        terraformVersion: '1.5.7'
+        terraformVersion: 'latest'
     - task: TerraformTaskV4@4
       displayName: terraform init
       inputs:
