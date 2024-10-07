@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket = "saravananterraformstate"
-    key    = "terraform.tfstate"
+    key    = "terraform.state"
     region = "ap-south-1"
   }
 }

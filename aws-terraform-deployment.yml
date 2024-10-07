@@ -24,7 +24,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)'
         backendServiceAWS: 'awsserviceconnection'
         backendAWSBucketName: 'saravananterraformstate'
-        backendAWSKey: 'terraform.tfstate'
+        backendAWSKey: 'terraform.state'
     - task: TerraformTaskV4@4
       displayName: terraform apply
       inputs:
