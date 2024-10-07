@@ -23,7 +23,7 @@ stages:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/aws'
         backendServiceAWS: 'awsserviceconnection'
-        backendAWSBucketName: 'terraform'
+        backendAWSBucketName: 'saravananterraformstate'
         backendAWSKey: 'terraform.tfstate'
     - task: TerraformTaskV4@4
       displayName: terraform apply
