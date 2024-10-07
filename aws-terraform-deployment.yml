@@ -21,7 +21,7 @@ stages:
         provider: 'aws'
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/aws'
-        backendServiceAWS: 'aws-eu-west-1'
+        backendServiceAWS: 'awsserviceconnection'
         backendAWSBucketName: 'terraform'
         backendAWSKey: 'terraform.tfstate'
     - task: TerraformTaskV4@4
@@ -30,4 +30,4 @@ stages:
         provider: 'aws'
         command: 'apply'
         workingDirectory: '$(System.DefaultWorkingDirectory)/aws'
-        environmentServiceNameAWS: 'aws-eu-west-1'
+        environmentServiceNameAWS: 'awsserviceconnection'
